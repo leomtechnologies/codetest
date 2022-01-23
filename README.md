@@ -1,16 +1,26 @@
-# codetest
-This repository is for our incoming interns. It contains a short task that will qualify their acceptance into our organization for 3/6 months internship. Working on real life project and gaining industry experience.
+#### ```User Story```
+_Laura just moved to a new environment in Lagos. The door to her room spoils at her apartment, and she does not know any carpenter around as she is still new to the environment._
 
-## Steps
+```USE CASE:```
+- Laura signs up.
+- Laura makes a request. She has to put on her GPS to supply her current location.
+- Laura gets a notification when her request is accepted and sees the Estimated Time of Arrival (ETA).
+- Laura proceeds to pay on the app with a transfer or gives cash to the carpenter.
+- Laura proceeds to checkout after her payment (if the transaction. was performed on the app)
+- Laura can give the carpenter a rating after his work is complete.
 
-1. Fork this repository, select your stack (frontend, backend, mobile).
-2. Clone the repo to your local pc
-3. Work on your task and get ready for submission
-4. Create a branch in your name and your stack (e.g: adamu_frontend)
-5. create a pull request to submit your task
+## `worka.ng` Code Test
 
-## Next Step
+# Front-end
+> Design a simple well structured front end application with 100% functionality that will take at least five (5) input of your choice from the users end.
+store and retrieve data in localStorage only.
+Application instance must be multi-user (i.e multiple user can retrieve their data from the local storage as designed) ----- Good-luck [Use any of these lang. Reactjs, Vuejs or Vanilla HTML]
 
-Your submission will be vetted, once you pass, you will be reached out to.
+# Back-end
+> Design a simple api with JWT approach, custom data encryption (no use of library) that will take in at least 3 user input and output in JSON format and also play along with file operations and not limit to file upload only. uses of mysql and mongoose db is allowed. no limited number of functions to be design. ----- Good-luck [Use any of these lang. Node, PhP or Python]
 
-## Welcome to Leom Technologies Space.
+# Mobile
+> Pick any two of the screen layout from the link below and redesign it with a complete functionality of the components. no http calls required only shared-storage-preferences. ability to store and retrieve data. pay attention to colors family and themes. ----- Good-luck [use any of these lang. Android XMl, Flutter or React-Native]
+Image link: https://figmatemplate.com/wp-content/uploads/2020/07/Free-Sign-up-Figma-Mobile-Screens-Templates-758x569.jpg
+
+![Screenshot](https://figmatemplate.com/wp-content/uploads/2020/07/Free-Sign-up-Figma-Mobile-Screens-Templates-758x569.jpg
