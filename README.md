@@ -23,4 +23,4 @@ Application instance must be multi-user (i.e multiple user can retrieve their da
 > Pick any two of the screen layout from the link below and redesign it with a complete functionality of the components. no http calls required only shared-storage-preferences. ability to store and retrieve data. pay attention to colors family and themes. ----- Good-luck [use any of these lang. Android XMl, Flutter or React-Native]
 Image link: https://figmatemplate.com/wp-content/uploads/2020/07/Free-Sign-up-Figma-Mobile-Screens-Templates-758x569.jpg
 
-![Screenshot](https://figmatemplate.com/wp-content/uploads/2020/07/Free-Sign-up-Figma-Mobile-Screens-Templates-758x569.jpg
+![Screenshot](https://figmatemplate.com/wp-content/uploads/2020/07/Free-Sign-up-Figma-Mobile-Screens-Templates-758x569.jpg)
