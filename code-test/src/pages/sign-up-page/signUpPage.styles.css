@@ -1,0 +1,32 @@
+.sign-up {
+  width: 90vw;
+}
+.sign-up__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  gap: 5rem;
+}
+
+.sign-up .input-text,
+.sign-up textarea {
+  width: 50rem;
+  max-width: 95vw;
+}
+
+.sign-up .btn {
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+.sign-up__right,
+.sign-up__left {
+  padding: 5rem 2rem;
+  box-shadow: inset 0 0 2rem #eee2;
+  border-radius: 2rem;
+  /* place-self: center; */
+}
+.sign-up__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

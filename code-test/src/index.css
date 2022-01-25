@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #01021c;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  color: #ececec;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+html {
+  font-size: 10px;
+}

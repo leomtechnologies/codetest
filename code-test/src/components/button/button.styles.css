@@ -1,0 +1,19 @@
+.btn {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #95aff3;
+  box-shadow: 0.2rem 0.2rem 0.4rem #eee3;
+  color: #ececec;
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+  transform: scale(0.95) translateY(-1px);
+  box-shadow: none;
+}
