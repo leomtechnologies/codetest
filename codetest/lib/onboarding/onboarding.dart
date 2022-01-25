@@ -1,7 +1,7 @@
 import 'package:codetest/custom_widgets.dart';
 import 'package:codetest/register.dart';
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import 'onboarding_data.dart';
 
 class Onboarding extends StatefulWidget {
@@ -41,111 +41,120 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
+    var constraints = MediaQuery.of(context);
+     var widthFactor = constraints.size.width/392.72727272727275;
+    var heightFactor = constraints.size.height/781.0909090909091;
+    print(constraints.size.height);
+
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
+      body: Column(
         children: [
-          const Positioned(
-              top: 400,
-              right: 300,
-              child: CircleAvatar(
-                radius: 100,
-                backgroundColor: Color(0xffD3B4F0),
-              )),
-          const Positioned(
-            top: -100,
-            left: 50,
-            child: CircleAvatar(
-              radius: 300,
-              backgroundColor: Color(0xffA95EF9),
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(
-                  height: 200,
+          Stack(
+            children: [
+               Positioned(
+                  top: 400 * heightFactor,
+                  right: 300 * widthFactor,
+                  child: CircleAvatar(
+                    radius: 100 * widthFactor,
+                    backgroundColor: const Color(0xffD3B4F0),
+                  )),
+               Positioned(
+                top: -100 *heightFactor,
+                left: 50*widthFactor,
+                child: CircleAvatar(
+                  radius: 300*widthFactor,
+                  backgroundColor: const Color(0xffA95EF9),
                 ),
-                SizedBox(
-                  height: 350,
-                  child: PageView(
-                    physics: const ClampingScrollPhysics(),
-                    onPageChanged: (page) {
-                      setState(() {
-                        _currentPage = page;
-                      });
-                    },
-                    controller: _pageController,
-                    children: const <Widget>[
-                      GetOnboardingPage(
-                          imagePath: 'assets/chair1.png',),
-                      GetOnboardingPage(
-                          imagePath: 'assets/chair1.png', ),
-                      GetOnboardingPage(
-                          imagePath: 'assets/chair1.png',)
-                    ],
-                  ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                     SizedBox(
+                      height: 200*heightFactor,
+                    ),
+                    SizedBox(
+                      height: 350 *heightFactor,
+                      child: PageView(
+                        physics: const ClampingScrollPhysics(),
+                        onPageChanged: (page) {
+                          setState(() {
+                            _currentPage = page;
+                          });
+                        },
+                        controller: _pageController,
+                        children: const <Widget>[
+                          GetOnboardingPage(
+                              imagePath: 'assets/chair1.png',),
+                          GetOnboardingPage(
+                              imagePath: 'assets/chair1.png', ),
+                          GetOnboardingPage(
+                              imagePath: 'assets/chair1.png',)
+                        ],
+                      ),
+                    ),
+                    //Display for the three dots indicators
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: _buildPageIndicator()),
+          
+                     SizedBox(
+                      height: 50*heightFactor,
+                    ),
+          
+                     Center(
+                        child: Text(
+                      'Welcome To QuStore!',
+                      style: TextStyle(fontSize: 20*heightFactor, fontWeight: FontWeight.bold),
+                    )),
+                     SizedBox(
+                      height: 10 *heightFactor,
+                    ),
+                    const Center(
+                        child: Text(
+                      'With long experience in the audio industry \n \t\t\t\t\twe create the best quality procucts',
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    )),
+                     SizedBox(
+                      height: 20 * heightFactor,
+                    ),
+                    _currentPage == 2
+                        ? Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                            child: QuStoreElevatedButton(onPressed:  () {
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
+                                },
+                                title: 'Get Started',
+                                icon: Icons.arrow_right_alt,
+                                )
+                          )
+                        : Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 160.0*widthFactor),
+                            child: TextButton(
+                                onPressed: () {
+                                  if (_pageController.hasClients) {
+                                    _pageController.animateToPage(
+                                      _currentPage + 1,
+                                      duration: const Duration(milliseconds: 400),
+                                      curve: Curves.easeIn,
+                                    );
+                                  }
+                                },
+                                child: Row(
+                                  children:  [
+                                    Text('Next', style: TextStyle(fontSize: 15 *heightFactor),),
+                                    Icon(Icons.navigate_next, size:  15 * heightFactor,),
+                                  ],
+                                )),
+                          )
+                  ],
                 ),
-                //Display for the three dots indicators
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: _buildPageIndicator()),
-
-                const SizedBox(
-                  height: 50,
-                ),
-
-                const Center(
-                    child: Text(
-                  'Welcome To QuStore!',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Center(
-                    child: Text(
-                  'With long experience in the audio industry \n \t\t\t\t\twe create the best quality procucts',
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                )),
-                const SizedBox(
-                  height: 20,
-                ),
-                _currentPage == 2
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: QuStoreElevatedButton(onPressed:  () {
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
-                            },
-                            title: 'Get Started',
-                            icon: Icons.arrow_right_alt,
-                            )
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 160.0),
-                        child: TextButton(
-                            onPressed: () {
-                              if (_pageController.hasClients) {
-                                _pageController.animateToPage(
-                                  _currentPage + 1,
-                                  duration: const Duration(milliseconds: 400),
-                                  curve: Curves.easeIn,
-                                );
-                              }
-                            },
-                            child: Row(
-                              children: const [
-                                Text('Next'),
-                                Icon(Icons.navigate_next),
-                              ],
-                            )),
-                      )
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
