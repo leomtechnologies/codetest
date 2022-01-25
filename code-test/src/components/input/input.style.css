@@ -1,0 +1,57 @@
+.input-text {
+  display: block;
+  color: inherit;
+  font-size: inherit;
+  padding: 1rem 0.5rem 1rem;
+  font-size: 2rem;
+  border: none;
+  border-bottom: 2px solid #ece;
+  margin: 3rem auto;
+  outline: none;
+  background: none;
+  position: relative;
+  transition: all 0.2s;
+}
+.input-text:hover {
+  border-bottom: 2px solid #95aff3;
+  padding-bottom: 1.5rem;
+}
+
+input {
+  width: 100%;
+}
+textarea {
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem;
+  color: inherit;
+  border-radius: 2rem;
+  border: 1px solid #ece;
+  outline: none;
+  background: transparent;
+}
+.input-text::placeholder {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ececec;
+  -webkit-text-fill-font-size: 2rem;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #01021c inset !important;
+  -webkit-box-shadow: 0 0 0 30px none inset !important;
+  font-size: 2rem !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
